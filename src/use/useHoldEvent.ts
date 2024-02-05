@@ -11,7 +11,7 @@ export function useHoldEvent(options: UseHoldOptions) {
   const { ready, start, stop } = useTimeout(300, { controls: true })
   const { pause, resume } = useIntervalFn(() => {
    if (ready.value) { 
-    options.fn
+    options.fn()
    }
   }, 50, {
     immediate: false,
